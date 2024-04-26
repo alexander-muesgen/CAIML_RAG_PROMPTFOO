@@ -1,0 +1,35 @@
+prompts: ['{{ query }}']
+providers:
+  - 'python:basic_selfQuery_retriever.py'
+  - 'python:self_querying_retriever.py'
+tests:
+  - vars:
+      query: A Book about a powerful ring
+    assert:
+      - type: contains-all
+        value: ['Lord of the Rings', 'Frodo']
+  - vars:
+      query: A Book with a rating above 4.7
+    assert:
+      - type: contains-all
+        value: ['The Lord of the Rings',"To Kill a Mockingbird"]
+  - vars:
+      query: Published before 1900
+    assert:
+      - type: contains-all
+        value: ["Pride and Prejudice", "Frankenstein", "Crime and Punishment"]
+  - vars:
+      query: Tragic book about the American Dream
+    assert:
+      - type: contains-all
+        value: ["The Great Gatsby"]
+  - vars:
+      query: A dystopian book from England with a rating above 4.6
+    assert:
+      - type: contains-all
+        value: [ "Brave New World"]
+  - vars:
+      query: Books about the number 42
+    assert:
+      - type: contains-all
+        value: ["The Hitchhiker's Guide to the Galaxy"]
