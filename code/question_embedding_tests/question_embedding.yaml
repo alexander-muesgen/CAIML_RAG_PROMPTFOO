@@ -9,6 +9,8 @@ tests:
     assert:
     - type: select-best
       value: Chose the best advice for the person seeking emotional guidance.
+    - type: contains
+      value: 'Stained Memories'
 
   # - vars:
   #     query: What can i do to make things right?
@@ -16,6 +18,8 @@ tests:
   #   assert:
   #   - type: select-best
   #     value: Chose the best advice for the person seeking emotional guidance.
+  #   - type: contains
+  #     value: 'Bejeweled'
 
   
   # - vars:
@@ -24,6 +28,8 @@ tests:
   #   assert:
   #   - type: select-best
   #     value: Chose the best advice for the person seeking emotional guidance.
+  #   - type: contains
+  #     value: 'Anti Hero'
 
   # - vars:
   #     query: Everybody expects too mutch of me. I'm tired of it. I need to be free. What should I do?
@@ -31,6 +37,8 @@ tests:
   #   assert:
   #   - type: select-best
   #     value: Chose the best advice for the person seeking emotional guidance.
+  #   - type: contains
+  #     value: 'Bejeweled'
 
 
   # - vars:
@@ -39,6 +47,8 @@ tests:
   #   assert:
   #   - type: select-best
   #     value: Chose the best advice for the person seeking emotional guidance.
+  #   - type: contains
+  #     value: 'Lavender Haze'
 
 
   # - vars:
@@ -47,8 +57,8 @@ tests:
   #   assert:
   #   - type: select-best
   #     value: Chose the best advice for the person seeking emotional guidance.
-
-
+  #   - type: contains
+  #     value: 'Maroon'
   # - vars:
   #     query: Can i get free tickets to the concert?
        
