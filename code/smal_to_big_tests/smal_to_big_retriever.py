@@ -17,7 +17,7 @@ language_model_name = 'gpt-3.5-turbo-0125'
 child_splitter = RecursiveCharacterTextSplitter(chunk_size=200)
 parent_splitter = RecursiveCharacterTextSplitter(chunk_size=2000)
 
-db = Chroma( embedding_function=embedding_model, persist_directory="../chroma_db", collection_name=collection_name)
+db = Chroma( embedding_function=embedding_model, persist_directory="./chroma_db", collection_name=collection_name)
 
 fs = LocalFileStore("./store_location")
 

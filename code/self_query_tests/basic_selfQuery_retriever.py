@@ -19,7 +19,7 @@ embedding_model = OpenAIEmbeddings()
 collection_name = "books"
 language_model_name = "gpt-3.5-turbo-0125"
 collection_name = "books"
-vectorstore  = Chroma(persist_directory="../chroma_db", embedding_function=embedding_model, collection_name=collection_name)
+vectorstore  = Chroma(persist_directory="./chroma_db", embedding_function=embedding_model, collection_name=collection_name)
 
 def call_api(query, options, context):
     # Fetch relevant documents and join them into a string result.

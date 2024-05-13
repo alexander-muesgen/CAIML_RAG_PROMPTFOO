@@ -13,7 +13,7 @@ collection_name = 'tesla'
 embedding_model = OpenAIEmbeddings() # or something else
 language_model_name = 'gpt-3.5-turbo-0125'
 
-db = Chroma(embedding_function=embedding_model, persist_directory="../chroma_db", collection_name=collection_name)
+db = Chroma(embedding_function=embedding_model, persist_directory="./chroma_db", collection_name=collection_name)
 
 
 template = """Answer the following question based only on the following context:
