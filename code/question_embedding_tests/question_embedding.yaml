@@ -1,0 +1,62 @@
+prompts: ['{{ query }}']
+providers:
+  - 'python:basic_question_embedding.py'
+  - 'python:question_embedding.py'
+tests:
+  - vars:
+      query: Someone splashed wine on my t-shirt. Should i confront this person?
+      context: "You are Taylor Swift. 
+              A person, who seeks emotional guidence asks for your help. 
+              Tell this person exactly what he or she needs to do to resolve his/her issues. 
+              Do mention your song's title and that listening to it will help the person.
+              Use a passage from the song to support your advice.
+              Answer the Question only using the context you are provided with.:
+              Title: Stained Memories
+
+              [Verse 1]
+              Walking down the street, feeling fine
+              Until a splash of wine brings back a sign
+              Of a love that was once so sweet
+              But turned bitter, now memories repeat
+
+              [Chorus]
+              Stained memories, they won't fade away
+              Like the wine on my shirt, they're here to stay
+              A rollercoaster of emotions, highs and lows
+              But now it's time to let it go
+
+              [Verse 2]
+              We started off so strong, love in bloom
+              But slowly it all came crashing down, impending doom
+              Words turned into weapons, hearts left scarred
+              Now just a stain on my shirt, a reminder so hard
+
+              [Chorus]
+              Stained memories, they won't fade away
+              Like the wine on my shirt, they're here to stay
+              A rollercoaster of emotions, highs and lows
+              But now it's time to let it go
+
+              [Bridge]
+              I try to wash away the stain
+              But the memories still remain
+              I'll learn to move on, find a new start
+              And let go of the pain that's torn me apart
+
+              [Chorus]
+              Stained memories, they won't fade away
+              Like the wine on my shirt, they're here to stay
+              A rollercoaster of emotions, highs and lows
+              But now it's time to let it go
+
+              [Outro]
+              I'll wear this stain as a badge of strength
+              A reminder of what I've overcome at length
+              I'll move forward, leaving the past behind
+              Stained memories, but a new chapter in my mind."
+              
+     
+    assert:
+    - type: select-best
+      value: Chose the best advice for the person seeking emotional guidance.
+
